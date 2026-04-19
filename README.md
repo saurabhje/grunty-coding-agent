@@ -12,6 +12,8 @@ The agent runs a loop that talks to the model, checks if it wants to use a tool,
 
 - `read_file` reads the contents of a file
 - `write_file` writes content to a file
+- `code_execute` sandbox to execute code before pushing
+- `linting` performs linting checks on the code
 
 ## Setup
 
