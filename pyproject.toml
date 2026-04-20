@@ -1,0 +1,9 @@
+[project]
+name = "grunty-coding-agent"
+version = "0.1.0"
+description = "A minimal autonomous coding agent that can explore your codebase, make changes, verify erros and fix them without using any external libraries."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "groq>=1.2.0",
+]

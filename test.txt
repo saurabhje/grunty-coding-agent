@@ -1,1 +1,1 @@
-I am Sau, a backend agentic AI developer and currently I am bulding an autonocode editing agent.
+I am Sau, a backend agentic AI developer, and I am currently building an autonomous code-editing agent.

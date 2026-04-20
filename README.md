@@ -11,9 +11,10 @@ The agent runs a loop that talks to the model, checks if it wants to use a tool,
 ## Tools
 
 - `read_file` reads the contents of a file
-- `write_file` writes content to a file
+- `write_file` writes or overwrites content to a file
 - `code_execute` sandbox to execute code before pushing
 - `linting` performs linting checks on the code
+- `edit_file` replaces a specific string in a file (requires `old_str` and `new_str` parameters)
 
 ## Setup
 
