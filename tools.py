@@ -19,7 +19,7 @@ agent_tools = [
         "type": "function",
         "function": {
             "name": "write_file",
-            "description": "Write or make changes to the content of a file",
+            "description": "Use this method when you are creating a new file",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -34,7 +34,7 @@ agent_tools = [
         "type": "function",
         "function": {
             "name": "edit_file",
-            "description": "Edit a file by replacing a specific string with a new string.",
+            "description": "use this method to edit or make changes to a file by replacing a specific string with a new string.",
             "parameters": {
                 "type": "object",
                 "properties": {

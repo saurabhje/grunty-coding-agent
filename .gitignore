@@ -1,6 +1,6 @@
+__pycache__
 .venv
 .python-version
 dist
 build
 *.egg-info
-__pycache__

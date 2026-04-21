@@ -1,5 +1,5 @@
 # Grunty - Code Editing Agent
-
+> this file was written by this agent
 A minimal code editing agent built in Python using gpt-oss-120b via Groq. No frameworks, no orchestration libraries, just a while loop and a few tools.
 
 ## How it works
