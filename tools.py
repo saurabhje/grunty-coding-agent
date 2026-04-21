@@ -19,7 +19,7 @@ agent_tools = [
         "type": "function",
         "function": {
             "name": "write_file",
-            "description": "Use this method when you are creating a new file",
+            "description": "Use this tool only when you are creating a new file",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -87,6 +87,8 @@ def read_file(filepath: str):
 
 def write_file(filepath: str, content: str):
     try:
+        if os.path.exists(filepath):
+            return f"Error: {filepath} already exists. Use edit_file to modify existing files."
         with open(filepath, "w") as f:
             f.write(content) 
             return f"Successfully written: {filepath}"
@@ -130,12 +132,9 @@ def run_command(command: str):
             text=True,
             timeout=30
         )
-        output = ""
-        if result.stdout:
-            output += result.stdout
-        elif result.stderr:
-            output += result.stderr
-        return output or "command produced no output"
+        if result.returncode != 0:
+            return f"FAILED (exit {result.returncode}):\n{result.stderr or result.stdout}\nFix the error and run again."
+        return result.stdout or "command produced no output"
     except subprocess.TimeoutExpired:
         return f"comamnd timed out after 30 seconds"
     except Exception as e:
