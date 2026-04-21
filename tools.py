@@ -50,7 +50,7 @@ agent_tools = [
         "type": "function",
         "function": {
             "name": "list_files",
-            "description": "List all files in a directory recursively. Use this first to understand the codebase structure.",
+            "description": "List all files in a directory recursively. Use this first to understand the codebase structure. Skip the files that are result of build, cache or library modules",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -111,10 +111,12 @@ def list_files(directory: str = "."):
     try:
         files = []
         for root, dirs, filenames in os.walk(directory):
-            dirs[:] = [d for d in dirs if not d.startswith(".")]
+            dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("node_modules", "__pycache__", ".venv", "dist", "build")]
             for file in filenames:
                 filepath = os.path.join(root, file)
                 files.append(filepath)
+                if len(files) > 100:
+                    return f"\n{files}\n truncated.."
         return f"\n{files}"
     except Exception as e:
         return f"error reading file: {e}"

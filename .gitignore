@@ -1,1 +1,6 @@
-agent
+.venv
+.python-version
+dist
+build
+*.egg-info
+__pycache__
