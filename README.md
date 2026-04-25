@@ -56,10 +56,4 @@ Type `clear` to reset the conversation context. Ctrl+C to quit.
 - Run commands to verify changes did not break anything
 - Chain multiple tool calls together to complete a task autonomously
 
-## What it does not use
-
-- LangChain
-- LlamaIndex
-- Any agent orchestration framework
-
 Just Python and the Groq API.
